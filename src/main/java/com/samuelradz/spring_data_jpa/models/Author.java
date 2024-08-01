@@ -9,6 +9,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @Data
 @Entity
+@Table(name = "AUTHOR_TBL")
 public class Author {
 
     @Id
