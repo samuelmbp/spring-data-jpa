@@ -1,15 +1,19 @@
 package com.samuelradz.spring_data_jpa.models;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 
 @NoArgsConstructor
+@AllArgsConstructor
+@Builder
 @Data
 @Entity
-@Table(name = "AUTHOR_TBL")
+// @Table(name = "AUTHOR_TBL")
 public class Author {
 
     @Id
@@ -53,16 +57,5 @@ public class Author {
     private String email;
 
     private int age;
-
-    @Column(
-            updatable = false,
-            nullable = false
-    )
-    private LocalDateTime createdAt;
-
-    @Column(
-            insertable = false
-    )
-    private LocalDateTime lastModified;
 
 }
