@@ -1,31 +1,32 @@
 package com.samuelradz.spring_data_jpa.models;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
+import lombok.experimental.SuperBuilder;
 
-import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.List;
 
+// TODO: This annotation calls the BaseEntity (super class)
+@EqualsAndHashCode(callSuper = true)
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
+@SuperBuilder
 @Data
 @Entity
-// @Table(name = "AUTHOR_TBL")
-public class Author {
+// @Table(name = "AUTHOR_TBL") // Change table name
+public class Author extends BaseEntity {
 
-    @Id
+    // TODO: Note that the id is in the BaseEntity class for reusability
+
+
+    // @Id
     // DEFAULT: strategy = GenerationType.AUTO
-    @GeneratedValue(
+    // @GeneratedValue(
 //            strategy = GenerationType.SEQUENCE,
 //            strategy = GenerationType.TABLE,
 //            generator = "author_sequence"
 //            generator = "author_id_gen"
-    )
+    // )
 
     // Default is author_seq
     // @SequenceGenerator can customise the naming
@@ -41,7 +42,7 @@ public class Author {
 //            valueColumnName = "id_value",
 //            allocationSize = 1
 //    )
-    private Integer id;
+    // private Integer id;
 
     @Column(
             name = "f_name",
