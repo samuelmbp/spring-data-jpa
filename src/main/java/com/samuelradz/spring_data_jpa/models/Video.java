@@ -1,0 +1,16 @@
+package com.samuelradz.spring_data_jpa.models;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@SuperBuilder
+public class Video {
+
+    private int length;
+}

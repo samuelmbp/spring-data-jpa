@@ -2,20 +2,21 @@ package com.samuelradz.spring_data_jpa.models;
 
 import jakarta.persistence.*;
 import lombok.*;
-import lombok.experimental.SuperBuilder;
 
-@EqualsAndHashCode(callSuper = true)
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@SuperBuilder
+@Builder
 @Entity
-public class Resource extends BaseEntity {
+public class Resource {
+
+    @Id
+    @GeneratedValue
+    private Integer id;
 
     private String name;
     private int size;
     private String url;
-
 
     @OneToOne
     @JoinColumn(name = "lecture_id")

@@ -21,7 +21,6 @@ public class BaseEntity {
     @GeneratedValue
     private Integer id;
 
-
     private LocalDateTime createdAt;
     private LocalDateTime lastModifiedAt;
 
