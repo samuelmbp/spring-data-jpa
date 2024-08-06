@@ -14,7 +14,7 @@ import lombok.experimental.SuperBuilder;
 @AllArgsConstructor
 @SuperBuilder
 @Entity
-@DiscriminatorValue("F")
+// @DiscriminatorValue("F")
 // TODO: Note that the 'F' value will appear under the column
 //  resource_type (from Resource class)
 public class File extends Resource {

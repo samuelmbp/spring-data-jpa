@@ -9,12 +9,10 @@ import lombok.experimental.SuperBuilder;
 @AllArgsConstructor
 @SuperBuilder
 @Entity
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-// Default value is d_type
-@DiscriminatorColumn(name = "resource_type")
+@Inheritance(strategy = InheritanceType.JOINED)
+// Default name is d_type
+// @DiscriminatorColumn(name = "resource_type") // ONLY WITH SINGLE TABLES
 public class Resource {
-
-    // TODO: Single Table Entity
 
     @Id
     @GeneratedValue
