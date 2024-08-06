@@ -2,13 +2,19 @@ package com.samuelradz.spring_data_jpa.models;
 
 import jakarta.persistence.*;
 import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
+@SuperBuilder
 @Entity
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+// Default value is d_type
+@DiscriminatorColumn(name = "resource_type")
 public class Resource {
+
+    // TODO: Single Table Entity
 
     @Id
     @GeneratedValue

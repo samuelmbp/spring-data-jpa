@@ -1,16 +1,18 @@
 package com.samuelradz.spring_data_jpa.models;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import jakarta.persistence.DiscriminatorValue;
+import jakarta.persistence.Entity;
+import lombok.*;
 import lombok.experimental.SuperBuilder;
 
+@EqualsAndHashCode(callSuper = true)
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @SuperBuilder
-public class Video {
+@Entity
+@DiscriminatorValue("V")
+public class Video extends Resource {
 
     private int length;
 }
