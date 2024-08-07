@@ -1,5 +1,6 @@
 package com.samuelradz.spring_data_jpa;
 
+import com.github.javafaker.Faker;
 import com.samuelradz.spring_data_jpa.models.Author;
 import com.samuelradz.spring_data_jpa.models.Video;
 import com.samuelradz.spring_data_jpa.repositories.AuthorRepository;
@@ -16,27 +17,31 @@ public class SpringDataJpaApplication {
 		SpringApplication.run(SpringDataJpaApplication.class, args);
 	}
 
-	// @Bean
+	@Bean
 	public CommandLineRunner commandLineRunner(
 			AuthorRepository authorRepository,
 			VideoRepository videoRepository
 	) {
 		return args -> {
-			/* Author author = Author.builder()
-					.firstName("John")
-					.lastName("Doe")
-					.age(29)
-					.email("john@doe.com")
-					.build();
+//			for (int i = 0; i < 50; i++) {
+//				Faker faker = new Faker();
+//				Author author = Author.builder()
+//						.firstName(faker.name().firstName())
+//						.lastName(faker.name().lastName())
+//						.age(faker.number().numberBetween(18, 50))
+//						.email(faker.internet().emailAddress())
+//						.build();
+//
+//				authorRepository.save(author);
+//			}
 
-			authorRepository.save(author); */
 
-			Video video = Video.builder()
+			/* Video video = Video.builder()
 					.name("abc")
 					.length(4)
 					.build();
 
-			videoRepository.save(video);
+			videoRepository.save(video);*/
 		};
 	}
 }
