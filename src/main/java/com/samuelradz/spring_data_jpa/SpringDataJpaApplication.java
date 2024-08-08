@@ -10,6 +10,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
+import java.util.List;
+
 @SpringBootApplication
 public class SpringDataJpaApplication {
 
@@ -50,7 +52,14 @@ public class SpringDataJpaApplication {
 			// authorRepository.updateAuthor(25, 1);
 
 			// Update all ages
-			authorRepository.updateAllAuthorsAges(18);
+			// authorRepository.updateAllAuthorsAges(18);
+
+			// Find by named query
+			authorRepository.findByNamedQuery(40)
+					.forEach(System.out::println);
+
+			// Update with named query
+			authorRepository.updateByNamedQuery(38);
 		};
 	}
 }
