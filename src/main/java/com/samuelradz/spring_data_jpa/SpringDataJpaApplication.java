@@ -23,25 +23,34 @@ public class SpringDataJpaApplication {
 			VideoRepository videoRepository
 	) {
 		return args -> {
-//			for (int i = 0; i < 50; i++) {
-//				Faker faker = new Faker();
-//				Author author = Author.builder()
-//						.firstName(faker.name().firstName())
-//						.lastName(faker.name().lastName())
-//						.age(faker.number().numberBetween(18, 50))
-//						.email(faker.internet().emailAddress())
-//						.build();
-//
-//				authorRepository.save(author);
-//			}
+			for (int i = 0; i < 50; i++) {
+				Faker faker = new Faker();
+				Author author = Author.builder()
+						.firstName(faker.name().firstName())
+						.lastName(faker.name().lastName())
+						.age(faker.number().numberBetween(18, 50))
+						.email(
+								faker.name().username() + "@mail.com"
+						)
+						.build();
 
+				authorRepository.save(author);
+			}
 
-			/* Video video = Video.builder()
-					.name("abc")
-					.length(4)
+			// Update Author with id #1
+			Author author = Author.builder()
+					.id(1)
+					.firstName("Sam")
+					.lastName("Radz")
+					.age(29)
+					.email("sam.radz@mail.com")
 					.build();
 
-			videoRepository.save(video);*/
+			// Update age by id
+			// authorRepository.updateAuthor(25, 1);
+
+			// Update all ages
+			authorRepository.updateAllAuthorsAges(18);
 		};
 	}
 }
